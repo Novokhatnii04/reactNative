@@ -2,7 +2,8 @@ import React from "react";
 import { StyleSheet, SafeAreaView, Image, View, StatusBar } from "react-native";
 import Background from "../../../assets/welcomeSection/background/welcomeBackground.png";
 import CardsWrapper from "./ui/CardsWrapper";
-import FadeInView from "../../shared/ui/FadeInView";
+import FadeInView from "../../widgets/FadeInView";
+import ButtonsWrapper from "./ui/ButtonsWrapper";
 
 const WelcomeScreen = () => {
   return (
@@ -11,6 +12,7 @@ const WelcomeScreen = () => {
         <StatusBar />
         <View style={styles.innerContainer}>
           <CardsWrapper />
+          <ButtonsWrapper />
         </View>
         <Image source={Background} style={styles.image} />
       </SafeAreaView>

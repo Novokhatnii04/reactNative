@@ -33,8 +33,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 12,
     lineHeight: 16,
-    fontWeight: 400,
-    fontFamily: "Inter",
+    fontWeight: "400",
     color: "#606773",
   },
   imageContainer: {
@@ -46,7 +45,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 20
+    paddingTop: 20,
   },
 });
 

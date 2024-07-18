@@ -1,9 +1,8 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import SplashScreen from "./src/screens/splashScreen/SplashScreenView";
-import WelcomeScreen from './src/screens/welcomeScreen/WelcomeScreen'
+import WelcomeScreen from "./src/screens/welcomeScreen/WelcomeScreen";
 import { useEffect, useState } from "react";
-import FadeInView from "./src/shared/ui/FadeInView";
+import FadeInView from "./src/widgets/FadeInView";
 
 export default function App() {
   const [isShowSplash, setIsShowSpalsh] = useState<boolean>(true);
@@ -14,8 +13,10 @@ export default function App() {
     }, 3000);
   }, []);
 
-  return ( 
-    <FadeInView style={styles.fadeInView}>{isShowSplash ? <SplashScreen /> : <WelcomeScreen />}</FadeInView>
+  return (
+    <FadeInView style={styles.fadeInView}>
+      {isShowSplash ? <SplashScreen /> : <WelcomeScreen />}
+    </FadeInView>
   );
 }
 
