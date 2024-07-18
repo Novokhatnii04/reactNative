@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
-import SplashScreen from "./src/screens/splashScreen/SplashScreenView";
-import WelcomeScreen from "./src/screens/welcomeScreen/WelcomeScreen";
+import SplashScreen from "./src/screens/splash/SplashScreenView";
 import { useEffect, useState } from "react";
 import FadeInView from "./src/widgets/FadeInView";
+import Navigation from "./src/app/navigation/Navigation";
 
 export default function App() {
   const [isShowSplash, setIsShowSpalsh] = useState<boolean>(true);
@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <FadeInView style={styles.fadeInView}>
-      {isShowSplash ? <SplashScreen /> : <WelcomeScreen />}
+      {isShowSplash ? <SplashScreen /> : <Navigation />}
     </FadeInView>
   );
 }

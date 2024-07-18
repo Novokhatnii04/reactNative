@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, Image, View, StatusBar } from "react-native";
-import Background from "../../../assets/welcomeSection/background/welcomeBackground.png";
+import Background from "../../../assets/images/welcomeSection/background/welcomeBackground.png";
 import CardsWrapper from "./ui/CardsWrapper";
 import FadeInView from "../../widgets/FadeInView";
 import ButtonsWrapper from "./ui/ButtonsWrapper";
