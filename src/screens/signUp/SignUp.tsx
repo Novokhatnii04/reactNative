@@ -10,14 +10,13 @@ const signContent = {
   svg: <SignUp />,
 };
 
-const RegisterScreen = () => {
+const RegisterScreen = ({ navigation }: any) => {
   return (
     <>
       <Image source={Background} style={styles.background} />
       <AuthWrapper {...signContent}>
-        <SignUpContent />
+        <SignUpContent navigation={navigation} />
       </AuthWrapper>
-      
     </>
   );
 };

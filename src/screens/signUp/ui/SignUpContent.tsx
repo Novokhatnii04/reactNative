@@ -1,4 +1,4 @@
-import { View, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView, Alert } from "react-native";
 
 import Button from "../../../shared/ui/button/Button";
 import ErrorText from "./Errors/Errors";
@@ -14,15 +14,20 @@ import {
   useForm,
 } from "react-hook-form";
 
-const SignUpContent = () => {
+const SignUpContent = ({ navigation }: any) => {
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm<FieldValues>();
 
+  const navigateHandler = () => navigation.navigate("Welcome");
+
   const submitHandler: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
+    Alert.alert("Succsess", "Welcome new user :)", [
+      { text: "Okay", style: "destructive", onPress: navigateHandler },
+    ]);
   };
 
   return (
