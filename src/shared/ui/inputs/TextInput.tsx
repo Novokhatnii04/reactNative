@@ -7,15 +7,21 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Control, Controller, FieldValues } from "react-hook-form";
-import Warning from '../../../../assets/images/authBackground/Warning'
+import Warning from "../../../../assets/images/authBackground/Warning";
 
 interface IAuthInput {
   title: string;
   placeholder: string;
   control: Control<FieldValues>;
+  rules: any;
 }
 
-const AuthTextInput: FC<IAuthInput> = ({ title, placeholder, control }) => {
+const AuthTextInput: FC<IAuthInput> = ({
+  title,
+  placeholder,
+  control,
+  rules,
+}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -42,8 +48,9 @@ const AuthTextInput: FC<IAuthInput> = ({ title, placeholder, control }) => {
             )}
           </View>
         )}
-        rules={{ required: true, minLength: 3 }}
+        rules={rules}
       />
+      
     </View>
   );
 };

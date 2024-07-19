@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from "react-native";
 import Eye from "../../../../assets/images/authBackground/Eye";
-import Warning from "../../../../assets/images/authBackground/Warning"; // Импорт иконки восклицательного знака
+import Warning from "../../../../assets/images/authBackground/Warning";
 import { Control, Controller, FieldValues, FieldError } from "react-hook-form";
 
 interface IAuthInput {
@@ -15,6 +15,7 @@ interface IAuthInput {
   placeholder: string;
   control: Control<FieldValues>;
   error?: FieldError;
+  rules?: any;
 }
 
 const PasswordInput: FC<IAuthInput> = ({
@@ -22,6 +23,7 @@ const PasswordInput: FC<IAuthInput> = ({
   placeholder,
   control,
   error,
+  rules,
 }) => {
   const [password, setPassword] = useState("");
   const [secureText, setSecureText] = useState(true);
@@ -56,7 +58,8 @@ const PasswordInput: FC<IAuthInput> = ({
               autoCapitalize="none"
             />
           )}
-          rules={{ required: true, minLength: 3 }}
+          
+          rules={rules}
         />
         <TouchableOpacity onPress={toggleSecureText} style={styles.icon}>
           {secureText ? (
@@ -71,7 +74,7 @@ const PasswordInput: FC<IAuthInput> = ({
           </View>
         )}
       </View>
-      {error && <Text style={styles.errorText}>{error.message}</Text>}
+      {/* {error && <Text style={styles.errorText}>{error.message}</Text>} */}
     </View>
   );
 };
