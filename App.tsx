@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import SplashScreen from "./src/screens/splash/SplashScreenView";
 import { useEffect, useState } from "react";
-import FadeInView from "./src/widgets/FadeInView";
+import FadeInView from "./src/widgets/FadeWrapper/FadeInView";
 import Navigation from "./src/app/navigation/Navigation";
 
 export default function App() {

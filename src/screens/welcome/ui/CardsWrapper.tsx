@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     height: 514,
     gap: 16,
-    marginTop: 12,
     flexDirection: "row",
   },
   leftBlock: {

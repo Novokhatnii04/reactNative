@@ -2,21 +2,22 @@ import React from "react";
 import { StyleSheet, SafeAreaView, Image, View, StatusBar } from "react-native";
 import Background from "../../../assets/images/welcomeSection/background/welcomeBackground.png";
 import CardsWrapper from "./ui/CardsWrapper";
-import FadeInView from "../../widgets/FadeInView";
+import FadeInView from "../../widgets/FadeWrapper/FadeInView";
 import ButtonsWrapper from "./ui/ButtonsWrapper";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }: any) => {
   return (
-    <FadeInView style={{ flex: 1 }}>
-      <SafeAreaView style={styles.container}>
-        <StatusBar />
-        <View style={styles.innerContainer}>
-          <CardsWrapper />
-          <ButtonsWrapper />
-        </View>
-        <Image source={Background} style={styles.image} />
-      </SafeAreaView>
-    </FadeInView>
+    <>
+      <FadeInView style={{ flex: 1 }}>
+        <SafeAreaView style={styles.container}>
+          <View style={styles.innerContainer}>
+            <CardsWrapper />
+            <ButtonsWrapper navigation={navigation} />
+          </View>
+          <Image source={Background} style={styles.image} />
+        </SafeAreaView>
+      </FadeInView>
+    </>
   );
 };
 
@@ -34,6 +35,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     zIndex: 2,
     width: "100%",
+    paddingBottom: "10%",
+    paddingTop: "10%",
   },
   image: {
     width: "100%",
